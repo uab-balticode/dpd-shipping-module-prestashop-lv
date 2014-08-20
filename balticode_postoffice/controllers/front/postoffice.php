@@ -162,10 +162,10 @@ class Balticode_PostofficePostofficeModuleFrontController extends ModuleFrontCon
                     $prestaShopCarrierCode = $handlerModel->getCarrierFromCode($carrierCode);
                     $terminalsCount = count($terminals);
 
-                    if ($terminalsCount === 0 && $groups === false) {
+                    if ($terminalsCount === 1 && $groups === false) {
                         $terminal = array_shift($terminals);
                         $html .= '<span>';
-                          $html .= $shippingModel->getTerminalTitle($terminal);
+                          //$html .= $shippingModel->getTerminalTitle($terminal);
                         $html .= '</span>';
 
                             $html .= <<<HTML
