@@ -1,0 +1,147 @@
+/*
+    
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * or OpenGPL v3 license (GNU Public License V3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * or
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to info@balticode.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this module to newer
+ * versions in the future.
+ *
+ * @category   Balticode
+ * @package    Balticode_Dpd
+ * @copyright  Copyright (c) 2013 BaltiCode UAB (http://balticode.com/)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @license    http://www.gnu.org/licenses/gpl-3.0.txt  GNU Public License V3.0
+ * @author     Sarunas Narkevicius
+ * 
+
+*/
+/* 
+    Created on : 23.01.2014, 22:38:17
+    Author     : Sarunas Narkevicius
+*/
+
+.balticode_dpd_parcelstore {
+    
+}
+.balticode_dpd_parcelstore p.description {
+    font-size: 0.75em;
+}
+
+.balticode_dpd_parcelstore td {
+    padding: 10px 5px;
+}
+
+.balticode_dpd_parcelstore .label {
+    max-width: 130px;
+    vertical-align: top;
+}
+
+.balticode_dpd_parcelstore .value {
+}
+
+.balticode_dpd_parcelstore table.border {
+    border: 1px solid #CBD3D4;    
+}
+
+.balticode_dpd_parcelstore table.border tr {
+    background: #fff;
+}
+
+.balticode_dpd_parcelstore table.border tr.headings {
+    background: #eee;
+}
+
+.balticode_dpd_parcelstore table.border th {
+    max-width: 150px;
+    text-align: center;
+    border-color: #DADFE0;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+}
+.balticode_dpd_parcelstore table.border td {
+    border-color: #DADFE0;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+}
+
+.balticode_dpdee_call_courier_button span, .balticode_dpdee_manifest_button span {
+    background: url("../img/dpd_logo.gif") !important;
+}
+.balticode_dpdee_print_slip_button span {
+    background: url("../img/dpd_logo.gif") !important;
+}
+
+#balticode_dpdee__button_courier_box {
+    width: 296px;
+    background: #fff;
+    border: 1px solid #111;
+    padding: 10px;
+    margin-left: -202px;
+    margin-top: 155px;
+}
+#balticode_dpdee__button_courier_box .time_range ,
+#balticode_dpdee__button_courier_box .date_range ,
+#balticode_dpdee__button_courier_box .label_info 
+{
+    text-align: left;
+    padding-left: 20px;
+}
+
+#balticode_dpdee__button_courier_box label {
+    float: none;
+}
+
+#balticode_dpdee__button_courier_box>div {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+#balticode_dpdee__button_courier_box .date_range {
+}
+#balticode_dpdee__button_courier_box .label_info {
+}
+
+
+#balticode_dpdee__button_courier_box .shipment_info label {
+    font-size: 8px;
+    width: 40px;
+}
+
+#balticode_dpdee__button_courier_box .shipment_info input {
+    width: 20px;
+}
+
+
+.messages ul { border:0 !important; }
+.messages li { min-height:23px !important; margin-bottom:11px !important; padding:8px 8px 2px 32px !important; font-size:.95em !important; font-weight:bold !important; list-style: none;}
+.messages ul li { margin:0 0 3px 0 !important; border:0 !important; padding:0 !important; list-style: none; }
+.error-msg { border:1px solid #f16048 !important; color:#df280a !important; background:#faebe7; }
+.success-msg { border:1px solid #95a486 !important; color:#3d6611 !important; background:#eff5ea; }
+.notice-msg { border:1px solid #ffd967 !important; background:#fffbf0; }
+.warning-msg { border:1px solid #666e73 !important; background:#e6e6e6; }
+.validation-advice { clear:both; min-height:15px; margin:3px 0 0 9px; }
+
+.balticode_dpd_parcelstore_chosen {
+    display: block;
+}
+
+.balticode_dpd_parcelstore_chosen:nth-of-type(1) {
+    display: none;
+}
+.balticode_dpd_parcelstore_track {
+    float: right;
+    color: #000;
+}
