@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>balticode_dpd_parcelstore</name>
+	<displayName><![CDATA[DPD Siuntų ta&scaron;kai]]></displayName>
+	<version><![CDATA[0.4]]></version>
+	<description><![CDATA[DPD offers high-quality shipping service from Lithuania to whole Europe.]]></description>
+	<author><![CDATA[]]></author>
+	<tab><![CDATA[shipping_logistics]]></tab>
+	<confirmUninstall><![CDATA[Are you sure you want to delete your details?]]></confirmUninstall>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>
