@@ -309,7 +309,7 @@ class balticode_dpd_parcelstore_data_send_executor {
         $name = 'dpdManifest' . '-'.$today. '.pdf';
 		$logo = '<img style="float:right;" src="'._PS_MODULE_DIR_ . 'balticode_dpd_parcelstore/img/logo.jpg" height="49" width="98">';
         $ISSN = '<img src="'._PS_MODULE_DIR_ . 'balticode_dpd_parcelstore/img/issn.jpg" height="17" width="17">';
-        $footer = '<img src="'._PS_MODULE_DIR_ . 'balticode_dpd_parcelstore/img/footer.jpg" width="100%">';
+        //$footer = '<img src="'._PS_MODULE_DIR_ . 'balticode_dpd_parcelstore/img/footer.jpg" width="100%">';
         $userId = $this->_baseInstance->getConfigData('SENDPACKAGE_USERID');    
         $mfile =  _PS_MODULE_DIR_ . 'balticode_dpd_parcelstore/manifest.nr';
             $handle = fopen($mfile, 'r');
@@ -324,44 +324,44 @@ class balticode_dpd_parcelstore_data_send_executor {
 $table .= <<<EOT
             <table style="width:2000mm; " border="0" cellspacing="5">
               <tr>
-                <td colspan="2">DPD LIETUVA</td>
-                <td>Telefonas:</td>
-                <td style="margin-right:100px">+37052106777</td>
+                <td colspan="2">DPD LATVIJA</td>
+                <td>Tel:</td>
+                <td style="margin-right:100px">67 385 240</td>
                 <td colspan="3" rowspan="3">{$logo}</td>
               </tr>
               <tr>
-                <td colspan="2">PVM LT116392917</td>
-                <td>Faksas:</td>
-                <td>+37052106740</td>
+                <td colspan="2">LV 40003393255</td>
+                <td>Fakss:</td>
+                <td>67 387 288</td>
               </tr>
               <tr>
-                <td colspan="2">LIEPKALNIO G. 180</td>
+                <td colspan="2">URIEKSTES 8A</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
               </tr>
               <tr>
-                <td><h3>Manifesto nr.</h3></td>
+                <td><h3>Manifesta nr.</h3></td>
                 <td>{$mNumber}</td>
-                <td style="width:30mm">Klientas:</td>
-                <td style="width:40mm">DPD LIETUVA UAB</td>
-                <td style="width:30mm">PVM kodas</td>
+                <td style="width:30mm">Klients:</td>
+                <td style="width:40mm">DPD LATVIJA SIA</td>
+                <td style="width:30mm">PVN reģ. nr.</td>
                 <td>Tel.</td>
                 <td>&nbsp;</td>
               </tr>
               <tr>
-                <td>Uždarymo data</td>
+                <td>Datums:</td>
                 <td>{$today}</td>
                 <td>{$userId}</td>
-                <td>LIEPKALNIO G. 180</td>
-                <td>LT116392917</td>
-                <td>2106777</td>
+                <td>URIEKSTES 8A</td>
+                <td>LV 40003393255</td>
+                <td>67 385 240</td>
                 <td>&nbsp;</td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>VILNIUS</td>
+                <td>RIGA</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -370,7 +370,7 @@ $table .= <<<EOT
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>LT-02121</td>
+                <td>LV-1005</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -386,13 +386,13 @@ $table .= <<<EOT
               </tr>
             </table>
             <table style="width:2000mm; " border="0" cellspacing="5">
-              <tr>
-                <td>Eil. Nr.</td>
-                <td>Siuntos tipas</td>
-                <td style="width:40mm">Gavėjas</td>
+              <tr border="1px">
+                <td>Nr.</td>
+                <td>Sūtījuma veids</td>
+                <td style="width:40mm">Saņēmējs</td>
                 <td style="width:30mm">Tel.</td>
-                <td>Svoris</td>
-                <td style="width:40mm">Siuntos NR.</td>
+                <td>Svars</td>
+                <td style="width:40mm">Sūtījuma Nr.</td>
                 <td>ISSN</td>
               </tr>
 EOT;
@@ -458,20 +458,108 @@ EOT;
 
 
                 $table .='<tr>
-                    <td><strong>Viso</strong></td>
+                    <td><strong>Kopā:</strong></td>
                     <td colspan="2">&nbsp;</td>
                     <td><strong>'.$weight.'</strong></td>
                     <td colspan="3">&nbsp;</td>
                   </tr>
                   <tr>
-                    <td>Siuntų kiekis</td>
+                    <td>Sūtījumu skats</td>
                     <td colspan="7">'.$i.'</td>
                   </tr>
                   <tr>
-                    <td>Pakuočių kiekis</td>
+                    <td>Paku skaits:</td>
                     <td colspan="7">'.$packages.'</td>
                   </tr>
-                </table>';
+                </table><table border="2px" cellspacing="0" cellpadding="0" width="747px" style="border:2px solid #000;">
+  <tr>
+    <td style="border-bottom:2px solid #000;"><table border="0" cellspacing="0" cellpadding="0" width="747px">
+      <tr>
+        <td colspan="3" style="font-weight:bold; padding-left:8px; padding-top:11px;">Papildus pakalpojumi</td>
+        </tr>
+      <tr>
+        <td height="2px" style="padding-left:14px; text-align:left;"><div style="background-color:#000; color:#000; height:2px; width:200px;" /></td>
+        <td></td>
+        <td></td>
+        </tr>
+      <tr style="line-height:29px; vertical-align:middle;">
+        <td style="padding-left:22px; width:315px;">
+<div style="border:2px solid #000;width:10px; height:10px;display:inline;margin-right:5px;"></div>Kraušana</td>
+        <td><div style="border:2px solid #000;width:10px; height:10px;display:inline;margin-right:5px;"></div>Gaidišana</td>
+        <td width="250px">
+
+<div style="border:2px solid #000;width:20px; height:15px;display:inline;border-style:dotted;border-right-width:0px; margin-left:10px;"></div>
+<div style="border:2px solid #000;width:20px; height:15px;display:inline;border-style:dotted;border-right-width:0px;"></div>
+<div style="border:2px solid #000;width:20px; height:15px;display:inline;border-style:dotted;border-right-width:0px; margin-right:5px;"></div>min.</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td style="border-bottom:2px solid #000;"><table border="0" cellspacing="0" cellpadding="0" width="747px;">
+      <tr>
+        <td style="font-weight:bold; padding-left:15px; line-height:22px; vertical-align:middle; font-size:11px;">NEPIETIEKAMS IEPAKOJUMS NENODROŠINA SŪTĪJUMA SAGLABĀSANU!</td>
+      </tr>
+      <tr>
+        <td height="2px" style="padding-left:14px; text-align:left;"><div style="background-color:#000; color:#000; height:2px; width:324px;" /></td>
+      </tr>
+      <tr>
+        <td style="line-height:16px; font-size:10px; padding-left:5px;">SIA DPD Latvija nav atbildīgs par neatbilstoši iepakotu sūtījumu.</td>
+      </tr>
+      <tr>
+        <td style="line-height:16px; font-size:10px; padding-left:5px;">Neatbilstošs iepakojums - tāds iepakojums, kas nenodrošina sūtījuma satura saglabāšanu transportēšanas laikā un nenodrošina to, ka ar šo sūtījumu netiks bojati citi sūtījumi.</td>
+      </tr>
+      <tr>
+        <td style="line-height:16px; font-size:10px; padding-left:5px;">(atzīmet sūtījuma nr.ISSN kolonnā vai ierakstīt laukā zemāk)</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0px 4px 10px; vertical-align:middle;">
+<div style="border:2px solid #000;width:720px; height:15px;display:inline;margin-right:5px;"></div></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table border="0" cellspacing="0" cellpadding="0" width="747px">
+      <tr>
+        <td style="line-height:16px; font-size:10px; padding-left:5px;">* apstiprinu, ka visa aizpildītā informācija ir pareiza</td>
+        <td width="150px;" style="padding-left:5px; font-size:12px;">(Nosūtītāja paraksts)</td>
+      </tr>
+      <tr>
+        <td style="line-height:16px; font-size:10px; padding-left:5px;">* esmu informēts, ka ___(ierakstīt skaitu) sūtījumu, kuru numuri atzīmēti, iepakojums nenodrošina to saglabāšanu transportēšanas laikā.</td>
+        <td style="padding-left:10px; text-align:left;"><div style="background-color:#000; color:#000; height:2px; width:131px;" /></td>
+      </tr>
+      <tr>
+        <td style="line-height:16px; font-size:10px; padding-left:5px;">Piekrītu, ka šie sūtījumi tiks transportēti šādā iepakojumā.</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="line-height:16px; font-size:10px; padding-left:5px;">Packing on my own responsibility.</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>';
+$plotis=150; //px
+$plotis_half=$plotis/2;
+$table .='<table border="0" cellspacing="0" cellpadding="0" width="747px;" style="text-align:center;">
+  <tr >
+    <td width="249px;" style="padding-top:10px;">Nosūtītājs:</td>
+    <td width="249px;" style="padding-top:10px;">Kurjers:</td>
+    <td width="249px;" style="padding-top:10px;">Datums:</td>
+  </tr>
+  <tr style="line-height:25px;">
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr style="text-align:center;">
+    <td width="249px" style="height:3px;"><div style="background-color:#000; display:inline; color:#000; height:2px; width:'.$plotis.'px;margin-left:50%; left:-'.$plotis_half.'px; position:relative; " /></td>
+    <td width="249px" style="height:3px;"><div style="background-color:#000; color:#000; display:inline; height:2px; width:'.$plotis.'px; margin-left:50%; left:-'.$plotis_half.'px; position:relative;" /></td>
+    <td width="249px" style="height:3px;"><div style="background-color:#000; color:#000; display:inline; height:2px; width:'.$plotis.'px;margin-left:50%; left:-'.$plotis_half.'px; position:relative; " /></td>
+  </tr>
+  <tr>
+    <td>(Vārds, Paraksts)</td>
+    <td>(Vārds, Tūre, Paraksts)</td>
+    <td>(Datums, Laiks)</td>
+  </tr>
+</table>';
 
 
             $cfooter='<page_footer style="width: 100%;">
