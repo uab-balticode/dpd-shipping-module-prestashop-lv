@@ -602,7 +602,7 @@ JS;
             'id_address_delivery' => $cart->id_address_delivery,
             'price' => $this->getOrderShippingCost($cart),
             'title' => $finalTitle,
-            'logo' => 'http://balticode.com/bclogo.jpg',
+            'logo' => 'http://balticode.com/dpd.jpg',
             'id_address_invoice' => $cart->id_address_invoice,
             'error_message' => '', //not required since phone nr is mandatory
             'is_default' => false,
