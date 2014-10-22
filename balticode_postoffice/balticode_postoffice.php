@@ -965,7 +965,7 @@ JS;
             return self::$_carriersByCode[$code];
         }
         $db = Db::getInstance();
-        $sql = 'SELECT * FROM `' . _DB_PREFIX_ . "carrier` where external_module_name = '{$code}' and deleted = 0";
+        $sql = 'SELECT * FROM `' . _DB_PREFIX_ . "carrier` where external_module_name = '{$code}' and deleted = 0 ORDER BY id_carrier DESC";
         $res = $db->executeS($sql);
         if (count($res)) {
             self::$_carriersByCode[$code] = new Carrier($res[0]['id_carrier']);

@@ -410,9 +410,11 @@ JS;
      * @return string
      */
     public function hookDisplayFooter() {
-        $className = 'OrderOpcController';
-        $php_self = 'order-opc';
-        if ($this->context->controller instanceof $className && $this->context->controller->php_self == $php_self) {
+        $className = 'OrderController';
+        $php_self = 'order';
+        $className_opc = 'OrderOpcController';
+        $php_self_opc = 'order-opc';
+        if (($this->context->controller instanceof $className && $this->context->controller->php_self == $php_self) || ($this->context->controller instanceof $className_opc && $this->context->controller->php_self == $php_self_opc)) {
             if (!$this->_carrierDisplayed) {
                 return $this->hookExtraCarrier(array('cart' => $this->context->cart));
             }
