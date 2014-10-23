@@ -146,12 +146,12 @@ class Balticode_Postoffice extends Module {
         $db = Db::getInstance();
         
         $qu = 'UPDATE `' . _DB_PREFIX_ .
-                "carrier` set id_tax_rules_group = '{$db->escape($tax)}' where name = '{$db->escape($code)}' and deleted = 0;";
+                "carrier` set id_tax_rules_group = '{$db->escape($tax)}' where external_module_name = '{$db->escape($code)}' and deleted = 0;";
 
         $db->execute($qu);
         
         $qu = 'SELECT * FROM `' . _DB_PREFIX_ .
-                "carrier` where name = '{$db->escape($code)}' and deleted = 0;";
+                "carrier` where external_module_name = '{$db->escape($code)}' and deleted = 0;";
 
         $res = $db->executeS($qu);
         if (count($res) !== 1) {
