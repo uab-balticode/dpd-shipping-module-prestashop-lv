@@ -204,11 +204,11 @@ class balticode_dpd_parcelstore_data_send_executor {
         }
         
         //run this hook only if order carrier matches baseinstance name
-        if ($this->_baseInstance->name != $carrier->name) {
+        if ($this->_baseInstance->name != $carrier->external_module_name) {
             return;
         }
         
-        if (!in_array($carrier->name, array(balticode_dpd_parcelstore::NAME, balticode_dpd_courier::NAME))) {
+        if (!in_array($carrier->external_module_name, array(balticode_dpd_parcelstore::NAME, balticode_dpd_courier::NAME))) {
             return;
         }
         
