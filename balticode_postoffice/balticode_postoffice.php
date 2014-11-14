@@ -793,7 +793,8 @@ EOT;
         $smarty->assign(array(
             'balticode_carrier' => $arr,
             'balticode_ERROR_MESSAGE' => $errorMessage,
-            'balticode_url' => str_replace('/'.Language::getIsoById(Context::getContext()->language->id).'/', '/', $this->context->link->getModuleLink($this->name, 'postoffice', array(), true)),
+            //'balticode_url' => str_replace('/'.Language::getIsoById(Context::getContext()->language->id).'/', '/', $this->context->link->getModuleLink($this->name, 'postoffice', array(), true)),
+            'balticode_url' => $this->context->link->getModuleLink($this->name, 'postoffice', array(), true),
             'balticode_divId' => 'balticode_carrier_' . $code,
             'balticode_carrierId' => $code . '\\\\,',
             'balticode_carrierCode' => $code,
