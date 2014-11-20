@@ -53,7 +53,8 @@ class Balticode_PostofficePostofficeModuleFrontController extends ModuleFrontCon
             if (isset($_POST) && count($_POST)) {
 
                 $post = $_POST;
-                $url = str_replace('/'.Language::getIsoById(Context::getContext()->language->id).'/', '/', $this->context->link->getModuleLink('balticode_postoffice', 'postoffice', array(), true));
+                //$url = str_replace('/'.Language::getIsoById(Context::getContext()->language->id).'/', '/', $this->context->link->getModuleLink('balticode_postoffice', 'postoffice', array(), true));
+                $url = $this->context->link->getModuleLink('balticode_postoffice', 'postoffice', array(), true);
                 $addressId = $post['address_id'];
                 $carrierCode = $post['carrier_code'];
                 $carrierId = $post['carrier_id'];
