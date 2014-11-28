@@ -1280,7 +1280,7 @@ class balticode_dpd_parcelstore_dpd_helper {
      * @return int
      */
     public function getNumberOfPackagesFromItemWeights(array $itemWeights, $maximumWeight) {
-        $numPackages = 1;
+        /**$numPackages = 1;
         $weight = 0;
         if ($maximumWeight > 0) {
             
@@ -1295,7 +1295,7 @@ class balticode_dpd_parcelstore_dpd_helper {
                 }
             }
             
-        }
+        }**/
         return 1; //return $numPackages;
     }
     
