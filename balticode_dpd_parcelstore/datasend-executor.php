@@ -413,7 +413,9 @@ EOT;
                         $barcodes[] = implode( "|",$orderData['pl_number']);
                     } 
                 $shipping = $order->getShipping();
-                if ($shipping[0]['state_name'] == 'balticode_dpd_parcelstore') {
+                $carrier = new Carrier($order->id_carrier);
+
+                if ($carrier->external_module_name == balticode_dpd_parcelstore::NAME) {
                     $parcel_type = 'Parcel Shop'; 
                 }else{
                     if ($order->payment == 'Cash on delivery (COD)')
@@ -435,12 +437,29 @@ EOT;
                     $table .="<td>".$parcel_type."</td>";
                     $delivery_address = new Address((int)$order->id_address_delivery);
                     $table .="<td><p>".$delivery_address->firstname." ".$delivery_address->lastname."<br>";
-                    $table .=$delivery_address->address1."<br>";
-                    if ($delivery_address->address2){
-                        $table .=$delivery_address->address2."<br>";
+                    if ($carrier->external_module_name == balticode_dpd_parcelstore::NAME) {
+                      $selectedParcelTerminals = $this->_baseInstance->_getHelperModule()->getOfficesFromCart($order->id_cart);
+                      if (count($selectedParcelTerminals) > 0){
+                        foreach ($selectedParcelTerminals as $addressId => $selectedParcelTerminal) {
+                          try {
+                              $table .=$selectedParcelTerminal['name']."<br>";
+                              $table .=$selectedParcelTerminal['zip_code']."<br>";
+                              $table .="<strong>".$selectedParcelTerminal['city']."</strong> </p></td>";
+                              } catch (Exception $ex) {
+                              //failure
+                              print_r($ex);
+                          }
+                        }
+                      }
+
+                    }else{
+                      $table .=$delivery_address->address1."<br>";
+                      if ($delivery_address->address2){
+                          $table .=$delivery_address->address2."<br>";
+                      }
+                      $table .=$delivery_address->postcode."<br>";
+                      $table .="<strong>".$delivery_address->city."</strong> </p></td>";
                     }
-                    $table .=$delivery_address->postcode."<br>";
-                    $table .="<strong>".$delivery_address->city."</strong> </p></td>";
                     $table .="<td>".$delivery_address->phone."</td>";
                     $table .="<td>".$weight."</td>";
                     $table .="<td>".implode( "<br>",$barcodes)."</td>";
@@ -465,7 +484,7 @@ EOT;
                   </tr>
                   <tr>
                     <td>Sūtījumu skats</td>
-                    <td colspan="7">'.$i.'</td>
+                    <td colspan="7">'.$packages.'</td>
                   </tr>
                   <tr>
                     <td>Paku skaits:</td>
