@@ -129,13 +129,14 @@ class balticode_dpd_parcelstore extends Module {
         $this->displayName = $this->l('DPD Parcelshop');
         $this->description = $this->l('DPD offers high-quality shipping service from Lithuania to whole Europe.');
         $this->confirmUninstall = $this->l('Are you sure you want to delete your details?');
-        if (!$this->getConfigData('TITLE') OR !$this->getConfigData('HANDLING_FEE'))
-            $this->warning = $this->l('Details must be configured in order to use this module correctly');
         if (file_exists(_PS_MODULE_DIR_ . $this->name . '/datasend-executor.php')) {
             require_once(_PS_MODULE_DIR_ . $this->name . '/datasend-executor.php');
             $executorClass = $this->name . '_data_send_executor';
             $this->dataSendExecutor = new $executorClass($this);
         }
+        if (!$this->getConfigData('TITLE') OR !$this->getConfigData('HANDLING_FEE')){
+            $this->warning = $this->l('Details must be configured in order to use this module correctly');
+          }
     }
 
     /**

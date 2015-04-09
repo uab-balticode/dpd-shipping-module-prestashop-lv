@@ -213,7 +213,7 @@ class balticode_dpd_parcelstore_dpd_api {
      * @param string $url
      * @return array
      */
-    protected function _getRequest($params = array('action' => 'parcelshop_info'), $url = null) {,
+    protected function _getRequest($params = array('action' => 'parcelshop_info'), $url = null) {
         echo "string2";
         die();
         if (!$url) {

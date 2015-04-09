@@ -1,5 +1,5 @@
 <input {if (!$balticode_carrierValue)}disabled="disabled" title="{l s='Please select pick-up point from the right' mod='balticode_postoffice'}"{/if} class="delivery_option_radio" type="radio" name="delivery_option[{$balticode_carrier.id_address}]" onclick="{$balticode_carrier.js}" value="{$balticode_carrierValue}" id="id_carrier{$balticode_carrier.id_carrier}" {if $balticode_carrier.isDefault == 1}checked="checked"{/if}
-		onchange="{if $balticode_carrier.opc}updateCarrierSelectionAndGift();{else}updateExtraCarrier($balticode_('#id_carrier{$balticode_carrier.id_carrier}').val(), {$balticode_carrier.id_address});{/if}"  />
+		onchange="{if $balticode_carrier.opc}updateCarrierSelectionAndGift();{else}updateExtraCarrier(balticode_('#id_carrier{$balticode_carrier.id_carrier}').val(), {$balticode_carrier.id_address});{/if}"  />
                 <label for="id_carrier{$balticode_carrier.id_carrier}">
                     <table class="resume">
                         <tr>
