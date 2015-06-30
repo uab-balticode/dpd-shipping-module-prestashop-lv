@@ -138,7 +138,7 @@ class balticode_dpd_courier extends balticode_dpd_parcelstore {
             'name1' => $address->firstname.' '.$address->lastname,
             'company' => $address->company,
             'street' => implode(' ', array($address->address1, $address->address2)),
-            'pcode' => $address->postcode,
+            'pcode' => preg_replace('/\D/', '', $address->postcode),
             'country' => strtoupper(Country::getIsoById($address->id_country)),
             'city' => $address->city,
             'Sh_contact' => $address->firstname.' '.$address->lastname,
